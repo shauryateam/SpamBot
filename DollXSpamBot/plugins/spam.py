@@ -216,3 +216,119 @@ async def hang(e):
         else:
             await e.reply(usage)
 
+
+HAN = [
+   "**tere Maaki Chut Message Open Kar**"
+   "**Bhen Ke Lode Message Kholle**",
+   "**Dalle BhiKhari Message Bhi khol kar dekh**",
+   "**Click Below Bitch**",
+   "**Fuck You Kid**",
+   "**Suar se Chudi hui olad message bhi kholle**",
+   "**Tere Bhen Ko choud message khol",
+   ]
+
+
+@BOT0.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT1.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT2.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT3.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT4.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT5.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT6.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT7.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT8.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+@BOT9.on(events.NewMessage(incoming=True, pattern=r"\%sispam" % hl))
+async def spam(e):
+    usage = f"**Module Name: Inline Spam** \n\nCommand:\n\n{hl}ispam <count> <Username Or reply to user>"
+    if e.sender_id in SUDO_USERS:
+        if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+        RiZoeL = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        bitxh = await e.get_reply_message()
+        if len(RiZoeL) == 2:
+            user = str(RiZoeL[1])
+            a = await e.client.get_entity(user)
+            g = a.id
+            if int(g) in RiZoeLX:
+                text = f"I can't raid on @RiZoeLX's Owner"
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) == OWNER_ID:
+                text = f"This guy is the owner Of these Bots."
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) in SUDO_USERS:
+                text = f"This guy is sudo user."
+                await e.reply(text, parse_mode=None, link_preview=None )
+            else:
+                c = a.first_name
+                username = f"[{c}](tg://user?id={g})"
+                counter = int(RiZoeL[0])
+                for _ in range(counter):
+                    open_msg = random.choice(HAN)
+                    prn = random.choice(PORMS)
+                    caption = f"{username} {open_msg}"
+                    await e.client.send_message(e.chat_id, 
+                                                     caption, 
+                                                     buttons=[
+                                                     [
+                                                      Button.inline("Click Here Bitch", data="dekhlo"),
+                                                     ],
+                                                     [
+                                                      Button.url(f"{c}'s Mom's Porno", f"{prn}"),
+                                                     ]
+                                                     ]
+                                                     )
+                    await asyncio.sleep(0.3)
+        elif e.reply_to_msg_id:             
+            a = await e.get_reply_message()
+            b = await e.client.get_entity(a.sender_id)
+            g = b.id
+            if int(g) in Deadly:
+                text = f"I can't raid on Owner"
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) == OWNER_ID:
+                text = f"This guy is the owner Of these Bots."
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) in SUDO_USERS:
+                text = f"This guy is sudo user."
+                await e.reply(text, parse_mode=None, link_preview=None )
+            else:
+                c = b.first_name
+                counter = int(Deadly[0])
+                username = f"[{c}](tg://user?id={g})"
+                for _ in range(counter):
+                    open_msg = random.choice(HAN)
+                    prn = random.choice(PORMS)
+                    caption = f"{username} {open_msg}"
+                    await e.client.send_message(e.chat_id, 
+                                                     caption, 
+                                                     buttons=[
+                                                     [
+                                                      Button.inline("Click Here Bitch", data="dekhlo"),
+                                                     ],
+                                                     [
+                                                      Button.url(f"{c} Mom's Porno", f"{prn}"),
+                                                     ]
+                                                     ]
+                                                     )
+                    await asyncio.sleep(0.3)
+        else:
+            await e.reply(usage)
+
+
+@BOT0.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT1.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT2.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT3.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT4.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT5.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT6.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT7.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT8.on(events.CallbackQuery(pattern=r"dekhlo"))
+@BOT9.on(events.CallbackQuery(pattern=r"dekhlo"))
+async def help_extra(event):
+   if event.query.user_id in SUDO_USERS:
+        Alert = ("I Don't Want To Abuse You Master")
+        await event.answer(Alert, cache_time=0, alert=True)
+   else:
+        textt = random.choice(RAID)
+        await event.edit(textt)

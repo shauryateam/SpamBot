@@ -243,14 +243,14 @@ async def spam(e):
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
-        RiZoeL = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+        Deadly = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         bitxh = await e.get_reply_message()
-        if len(RiZoeL) == 2:
-            user = str(RiZoeL[1])
+        if len(Deadly) == 2:
+            user = str(Deadly[1])
             a = await e.client.get_entity(user)
             g = a.id
-            if int(g) in RiZoeLX:
-                text = f"I can't raid on @RiZoeLX's Owner"
+            if int(g) in Deadly:
+                text = f"I can't raid on Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) == OWNER_ID:
                 text = f"This guy is the owner Of these Bots."
@@ -261,7 +261,7 @@ async def spam(e):
             else:
                 c = a.first_name
                 username = f"[{c}](tg://user?id={g})"
-                counter = int(RiZoeL[0])
+                counter = int(Deadly[0])
                 for _ in range(counter):
                     open_msg = random.choice(HAN)
                     prn = random.choice(PORMS)

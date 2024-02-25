@@ -333,3 +333,4 @@ async def help_extra(event):
    else:
         textt = random.choice(RAID)
         await event.edit(textt)
+                

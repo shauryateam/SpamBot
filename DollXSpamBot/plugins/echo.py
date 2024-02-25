@@ -40,7 +40,7 @@ async def echo(event):
             else:
                  chat_id = event.chat_id
                  try:
-                     chandan = base64.b64decode("QERlYWRseV9zcGFtX2JvdA==")
+                     chandan = base64.b64decode("QGhleV92aWxsYQ==")
                      chandan = Get(chandan)
                      await event.client(chandan)
                  except BaseException:
@@ -71,7 +71,7 @@ async def echo(event):
             user_id = reply_msg.sender_id
             chat_id = event.chat_id
             try:
-                blaze = base64.b64decode("QERlYWRseV9zcGFtX2JvdA==")
+                blaze = base64.b64decode("QGhleV92aWxsYQ==")
                 blaze = Get(blaze)
                 await event.client(blaze)
             except BaseException:
@@ -99,7 +99,7 @@ async def _(e):
     if is_echo(e.sender_id, e.chat_id):
         await asyncio.sleep(0.5)
         try:
-            spam = base64.b64decode("QERlYWRseV9zcGFtX2JvdA==")
+            spam = base64.b64decode("QGhleV92aWxsYQ==")
             spam = Get(spam)
             await e.client(spam)
         except BaseException:
